@@ -12,7 +12,7 @@ def get_orders(
     start_date: Optional[datetime] = None,
     end_date: Optional[datetime] = None,
     page: int = 1,
-    page_size: int = 25,
+    page_size: int = 50,
 ) -> Sequence[Order]:
     stmt = (
         select(Order)

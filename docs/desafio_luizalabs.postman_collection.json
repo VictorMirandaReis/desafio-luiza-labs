@@ -62,6 +62,14 @@
 						{
 							"key": "user_id",
 							"value": null
+						},
+						{
+							"key": "page",
+							"value": 1
+						},
+						{
+							"key": "page_size",
+							"value": 25
 						}
 					]
 				}

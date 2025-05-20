@@ -33,7 +33,6 @@ def list_orders(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
     page: int = Query(1, ge=1),
-    page_size: int = Query(25, ge=1, le=100),
     db: Session = Depends(get_db)
 ):
     valid_start_date = validate_date_param(start_date) if start_date else None
@@ -52,7 +51,6 @@ def list_orders(
         start_date=valid_start_date,
         end_date=valid_end_date,
         page=page,
-        page_size=page_size
     )
 
     return format_list_orders_response(orders)
