@@ -7,9 +7,11 @@ def make_user(id=1, external_id=1001, name="Alice"):
     user = User(id=id, external_id=external_id, name=name)
     return user
 
+
 def make_product(id, external_product_id, price):
     product = OrderProduct(id=id, external_product_id=external_product_id, price=price)
     return product
+
 
 def make_order(id, external_order_id, user, products, purchase_date=date(2024, 5, 10)):
     order = Order(
@@ -20,6 +22,7 @@ def make_order(id, external_order_id, user, products, purchase_date=date(2024, 5
     )
     order.products = products
     return order
+
 
 def test_format_list_orders_response_single_order():
     user = make_user()
@@ -50,6 +53,7 @@ def test_format_list_orders_response_single_order():
         {"product_id": 2002, "value": "20.50"},
     ]
 
+
 def test_format_list_orders_response_multiple_users():
     user1 = make_user(1, 1001, "Alice")
     user2 = make_user(2, 1002, "Bob")
@@ -76,6 +80,7 @@ def test_format_list_orders_response_multiple_orders_same_user():
     assert len(result) == 1
     assert result[0]["user_id"] == 1001
     assert len(result[0]["orders"]) == 2
+
 
 def test_format_find_by_id_response_valid():
     user = make_user()
@@ -106,6 +111,7 @@ def test_format_find_by_id_response_valid():
         {"product_id": 2001, "value": "5.25"},
         {"product_id": 2002, "value": "14.75"},
     ]
+
 
 def test_format_find_by_id_response_none():
     assert format_find_by_id_response(None) is None

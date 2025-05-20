@@ -33,11 +33,11 @@ def test_get_order_by_id_found(mock_order):
     mock_result = MagicMock()
     mock_result.scalars.return_value.first.return_value = mock_order
     mock_db.execute.return_value = mock_result
-    
+
     result = get_order_by_id(123, db=mock_db)
 
     assert result is not None
-    assert result.external_order_id == 123 # type: ignore
+    assert result.external_order_id == 123
     assert result.user.name == "Victor"
     assert len(result.products) == 2
     assert result.products[0].price == 100.0

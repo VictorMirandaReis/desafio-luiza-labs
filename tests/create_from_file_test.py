@@ -4,13 +4,16 @@ from unittest.mock import MagicMock
 from src.core.order.create_from_file import OrderFileProcessor
 from src.db.models import User, Order, OrderProduct
 
+
 @pytest.fixture
 def db_session():
     return MagicMock()
 
+
 @pytest.fixture
 def processor(db_session):
     return OrderFileProcessor(db_session)
+
 
 @pytest.fixture
 def valid_line():
@@ -23,13 +26,16 @@ def valid_line():
         "20240501"
     )
 
+
 @pytest.fixture
 def line_short():
     return "invalida".encode()
 
+
 @pytest.fixture
 def line_empty():
     return b"\n"
+
 
 @pytest.fixture
 def line_invalid_price():
@@ -41,6 +47,7 @@ def line_invalid_price():
         "00INVALIDO12" +
         "20240501"
     )
+
 
 @pytest.fixture
 def line_negative_price():
@@ -92,9 +99,11 @@ def line_invalid_user_id():
 
 def make_dummy_file(*lines):
     content = "\n".join(lines).encode()
+
     class DummyFile:
         file = io.BytesIO(content)
     return DummyFile()
+
 
 def test_valid_line_creates_order(processor, valid_line, db_session):
     db_session.execute.return_value.scalars.return_value.first.side_effect = [None, None, None]

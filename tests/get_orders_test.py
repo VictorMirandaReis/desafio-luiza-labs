@@ -25,7 +25,7 @@ def test_get_orders_no_filters(mock_order):
     result = get_orders(mock_db)
 
     assert len(result) == 1
-    assert result[0].user_id == 1001  # type: ignore
+    assert result[0].user_id == 1001
 
 
 def test_get_orders_with_user_id(mock_order):
@@ -34,10 +34,10 @@ def test_get_orders_with_user_id(mock_order):
     mock_result.scalars.return_value.all.return_value = [mock_order]
     mock_db.execute.return_value = mock_result
 
-    result = get_orders(mock_db, user_id=1001) # type: ignore
+    result = get_orders(mock_db, user_id=1001)
 
     assert len(result) == 1
-    assert result[0].user_id == 1001  # type: ignore
+    assert result[0].user_id == 1001
 
 
 def test_get_orders_with_start_date(mock_order):
@@ -50,7 +50,7 @@ def test_get_orders_with_start_date(mock_order):
     result = get_orders(mock_db, start_date=start_date)
 
     assert len(result) == 1
-    assert result[0].purchase_date >= start_date.date()  # type: ignore
+    assert result[0].purchase_date >= start_date.date()
 
 
 def test_get_orders_with_end_date(mock_order):
@@ -63,7 +63,7 @@ def test_get_orders_with_end_date(mock_order):
     result = get_orders(mock_db, end_date=end_date)
 
     assert len(result) == 1
-    assert result[0].purchase_date <= end_date.date()  # type: ignore
+    assert result[0].purchase_date <= end_date.date()
 
 
 def test_get_orders_with_pagination(mock_order):
@@ -75,4 +75,4 @@ def test_get_orders_with_pagination(mock_order):
     result = get_orders(mock_db, page=2, page_size=10)
 
     assert len(result) == 1
-    assert result[0].user_id == 1001  # type: ignore
+    assert result[0].user_id == 1001

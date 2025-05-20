@@ -10,9 +10,7 @@ from src.api.utils.exception_handlers import (
 
 app = FastAPI()
 
-app.add_exception_handler(StarletteHTTPException, http_exception_handler)  # type: ignore
-app.add_exception_handler(RequestValidationError, validation_exception_handler)  # type: ignore
+app.add_exception_handler(StarletteHTTPException, http_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
 
 app.include_router(router)
-
-
