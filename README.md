@@ -84,6 +84,26 @@ docker-compose down
 
 ---
 
+### 📚 Documentação da API
+
+- A pasta `docs/` contém o arquivo da **collection do Postman**, que pode ser usado para testar os endpoints da API.
+
+#### ▶️ Como importar a collection no Postman
+
+1. Abra o Postman.
+2. Clique em **"Import"** no canto superior esquerdo.
+3. Selecione a aba **"File"**.
+4. Navegue até a pasta `docs/` do projeto e selecione o arquivo `.json` da collection.
+5. Após a importação, a collection estará disponível na barra lateral.
+
+---
+
+### 🧪 Swagger UI (FastAPI)
+
+A API possui uma interface interativa gerada automaticamente com o **FastAPI**, que permite visualizar e testar os endpoints diretamente no navegador.
+
+- Acesse o Swagger em: [`http://localhost:8000/docs`](http://localhost:8000/docs)
+
 ## ✅ Checklist
 
 - Upload de arquivo via API  
