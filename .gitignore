@@ -1,0 +1,29 @@
+# Arquivos compilados
+__pycache__/
+*.pyc
+
+# Ambiente virtual (caso use localmente)
+venv/
+.env
+
+# Configurações de IDE
+.vscode/
+.idea/
+
+# Arquivos de log e cache de testes
+*.log
+.pytest_cache/
+.coverage
+
+# Docker
+*.env
+.env.*
+docker-compose.override.yml
+
+# Arquivos de build (se usar futuramente)
+*.egg-info/
+dist/
+build/
+
+# Banco de dados local (caso use SQLite em testes)
+*.sqlite3
