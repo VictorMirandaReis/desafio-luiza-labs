@@ -56,7 +56,7 @@ Uma API REST que recebe arquivos legados com pedidos desnormalizados, processa e
 
 - Apesar de não ser um requisito do desafio, incluí funcionalidades extras como paginação e filtragem por usuário para tornar a API mais completa e flexível.
 
-### Modelagem do Banco de Dados
+### 📐 Modelagem do Banco de Dados
 <img src="docs/modelagem.png" width="350" />
 
 - Embora o desafio não exigisse explicitamente, optei por incluir campos como external_id, external_order_id e external_product_id para separar os identificadores internos (usados pelo banco de dados) dos identificadores externos (vindos do arquivo legado ou sistemas externos). Isso facilita a organização e rastreabilidade dos dados importados, evita conflitos de ID interno do banco de dados em integrações externas e permite maior flexibilidade para futuras adaptações ou migrações.
@@ -115,7 +115,7 @@ Parâmetros opcionais:
 - Testes automatizados implementados
 - Documentação clara e completa da API
 
-## Melhorias futuras do projeto
+## 🔧 Melhorias futuras do projeto
 
 Como o escopo do projeto é pequeno, optei por não implementar algumas funcionalidades neste momento. No entanto, já considero as seguintes melhorias para versões futuras:
 
