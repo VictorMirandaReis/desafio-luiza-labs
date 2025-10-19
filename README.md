@@ -1,4 +1,4 @@
-# Desafio LuizaLabs
+# Desafio
 
 API REST que recebe arquivos legados com pedidos desnormalizados, processa e retorna os dados em formato JSON normalizado.
 
